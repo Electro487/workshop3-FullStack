@@ -18,7 +18,6 @@ function getNextId() {
   return String(maxId + 1);
 }
 
-
 function renderMovies(moviesToDisplay) {
   movieListDiv.innerHTML = "";
   if (moviesToDisplay.length === 0) {
@@ -38,18 +37,27 @@ function renderMovies(moviesToDisplay) {
   });
 }
 // Function to fetch all movies and store them (READ)
+// function fetchMovies() {
+//   fetch(API_URL)
+//     .then((response) => response.json())
+//     .then((movies) => {
+//       allMovies = movies;
+//       renderMovies(allMovies);
+//     })
+//     .catch((error) => console.error("Error fetching movies:", error));
+// }
+// fetchMovies();
+
 function fetchMovies() {
   fetch(API_URL)
     .then((response) => response.json())
     .then((movies) => {
-      allMovies = movies; // Store the full list
-      renderMovies(allMovies); // Display the full list
+      // Handle if movies is wrapped in a 'results' object (GitHub JSON)
+      allMovies = Array.isArray(movies) ? movies : movies.results;
+      renderMovies(allMovies);
     })
     .catch((error) => console.error("Error fetching movies:", error));
 }
-fetchMovies(); // Initial load
-
-
 
 // Search
 
@@ -63,7 +71,6 @@ searchInput.addEventListener("input", function () {
   });
   renderMovies(filteredMovies); // Display the filtered results
 });
-
 
 // create
 
@@ -90,7 +97,6 @@ form.addEventListener("submit", function (event) {
     })
     .catch((error) => console.error("Error adding movie:", error));
 });
-
 
 // update
 
@@ -125,8 +131,6 @@ function updateMovie(movieId, updatedMovieData) {
     })
     .catch((error) => console.error("Error updating movie:", error));
 }
-
-
 
 // delete
 
