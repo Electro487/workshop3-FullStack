@@ -1,4 +1,10 @@
-const API_URL = "http://localhost:3000/movies";
+// const API_URL = "http://localhost:3000/movies";
+
+const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000/movies"
+    : "https://electro487.github.io/workshop3-FullStack/movies.json";
+
 const movieListDiv = document.getElementById("movie-list");
 const searchInput = document.getElementById("search-input");
 const form = document.getElementById("add-movie-form");
