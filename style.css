@@ -1,0 +1,107 @@
+/* Dark Mode Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    /* Dark background */
+    color: #f0f0f0;
+    /* Light text */
+    margin: 20px;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: #f0f0f0;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    /* Dark form background */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+#search-input {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 8px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+#movie-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.movie-item {
+    background-color: #1e1e1e;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-item p {
+    margin: 0;
+    color: #f0f0f0;
+}
+
+.movie-item button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-item button:hover {
+    opacity: 0.8;
+}
+
+.movie-item button:first-of-type {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.movie-item button:last-of-type {
+    background-color: #e74c3c;
+    color: #fff;
+}
