@@ -1,9 +1,4 @@
-// const API_URL = "http://localhost:3000/movies";
-
-const API_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3000/movies"
-    : "https://electro487.github.io/workshop3-FullStack/movies.json";
+const API_URL = "http://localhost:3000/movies";
 
 const movieListDiv = document.getElementById("movie-list");
 const searchInput = document.getElementById("search-input");
@@ -37,27 +32,16 @@ function renderMovies(moviesToDisplay) {
   });
 }
 // Function to fetch all movies and store them (READ)
-// function fetchMovies() {
-//   fetch(API_URL)
-//     .then((response) => response.json())
-//     .then((movies) => {
-//       allMovies = movies;
-//       renderMovies(allMovies);
-//     })
-//     .catch((error) => console.error("Error fetching movies:", error));
-// }
-// fetchMovies();
-
 function fetchMovies() {
   fetch(API_URL)
     .then((response) => response.json())
     .then((movies) => {
-      // Handle if movies is wrapped in a 'results' object (GitHub JSON)
-      allMovies = Array.isArray(movies) ? movies : movies.results;
+      allMovies = movies;
       renderMovies(allMovies);
     })
     .catch((error) => console.error("Error fetching movies:", error));
 }
+fetchMovies();
 
 // Search
 
